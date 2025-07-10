@@ -16,16 +16,13 @@
 - **Export to Excel:** Export all entered data to an Excel file with one click.
 - **Modern & Responsive Design:** Clean and functional interface on all devices.
 
-## Screenshots
 
-> You can add screenshots of the application here.
 
 ## Getting Started
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/sportcafe-employee-hours.git
 ```
 
 ### 2. Project Structure
