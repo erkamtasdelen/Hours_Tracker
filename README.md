@@ -73,5 +73,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 For any questions or suggestions:
 **Erkam Tasdelen**
-[Your GitHub Profile]
-[Your Email Address] 
+erkamtasdelen@gmail.com
+erkamtasdelen.code@gmail.com
