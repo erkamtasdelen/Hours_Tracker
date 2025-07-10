@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hızlı 30 Günlük Çalışan Saatleri</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SportCafe - Uuren</h1>
+            <p>by Erkam Tasdelen</p>
+        </div>
+
+        <div class="employee-selector">
+            <div class="employee-input-section">
+                <div class="input-group">
+                    <label for="employeeName">Çalışan Adı</label>
+                    <input type="text" id="employeeName" placeholder="Çalışan adını girin">
+                </div>
+                <div class="input-group">
+                    <label for="monthYear">Ay/Yıl</label>
+                    <input type="month" id="monthYear">
+                </div>
+                <div class="input-group">
+                    <label>&nbsp;</label>
+                    <button class="btn" onclick="startTimeEntry()">Saat Girişi Başlat</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="timeGridSection" class="time-grid-section">
+            <div class="employee-info">
+                <div>
+                    <h2 id="currentEmployee">Çalışan Adı</h2>
+                    <p id="currentMonth">Ay/Yıl</p>
+                </div>
+                <div class="quick-actions">
+                    <button class="btn btn-small" onclick="fillWeekdays()">Hafta İçi Doldur</button>
+                    <button class="btn btn-small" onclick="clearAll()">Temizle</button>
+                    <button class="btn btn-small" onclick="copyPrevious()">Önceki Haftayı Kopyala</button>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <button class="btn btn-export" onclick="saveEmployee()">Kaydet</button>
+                <button class="btn btn-export" onclick="exportToExcel()">Excel'e Aktar</button>
+            </div>
+
+            <div class="time-grid" id="timeGrid">
+                <!-- Grid buraya dinamik olarak gelecek -->
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <h3 id="totalDays">0</h3>
+                    <p>Çalışılan Gün</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="totalHours">0</h3>
+                    <p>Toplam Saat</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="avgHours">0</h3>
+                    <p>Günlük Ortalama</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="weekdayHours">0</h3>
+                    <p>Hafta İçi Saat</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="weekendHours">0</h3>
+                    <p>Hafta Sonu Saat</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="nightHours">0</h3>
+                    <p>Gece Mesai</p>
+                </div>
+            </div>
+
+            <div class="detailed-stats">
+                <h3 style="margin-bottom: 20px; color: #232a34;">📊 Detaylı İstatistikler</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">En Uzun Gün:</span>
+                        <span class="stat-value" id="longestDay">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">En Kısa Gün:</span>
+                        <span class="stat-value" id="shortestDay">-</span>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <span class="stat-label">Hafta İçi Gün:</span>
+                        <span class="stat-value" id="weekdayCount">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Hafta Sonu Gün:</span>
+                        <span class="stat-value" id="weekendCount">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Gece Vardiyası:</span>
+                        <span class="stat-value" id="nightShiftCount">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Öğlen Vardiyası:</span>
+                        <span class="stat-value" id="dayShiftCount">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="employee-list">
+            <h3>Kaydedilen Çalışanlar</h3>
+            <div id="employeeList">
+                <div style="text-align: center; padding: 20px; color: #7f8c8d;">
+                    Henüz kayıtlı çalışan bulunmuyor
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/scripts.js"></script>
+</body>
+</html>
